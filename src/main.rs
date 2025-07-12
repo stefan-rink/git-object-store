@@ -1,7 +1,7 @@
 mod objects;
 
-use objects::object_service::ObjectService;
 use objects::object_filter::object_filter;
+use objects::object_service::ObjectService;
 
 #[tokio::main]
 async fn main() {

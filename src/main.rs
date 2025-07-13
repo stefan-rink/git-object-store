@@ -1,7 +1,11 @@
 mod objects;
+mod config;
+
+use std::net::Ipv4Addr;
 
 use objects::object_filter::object_filter;
 use objects::object_service::ObjectService;
+use config::environment;
 
 #[tokio::main]
 async fn main() {
@@ -9,5 +13,10 @@ async fn main() {
 
     let api = object_filter(object_service);
 
-    warp::serve(api).run(([127, 0, 0, 1], 3030)).await;
+    // Load env config
+    let env = environment();
+
+    // Run web server with host and port from .env
+    let host: Ipv4Addr = env.host.parse().expect("invalid IPv4 address");
+    warp::serve(api).run((host.octets(), env.port)).await;
 }

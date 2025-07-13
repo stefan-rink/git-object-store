@@ -16,7 +16,6 @@ pub struct ObjectModel {
     pub content: Value,
 }
 
-
 /**
  * DTO for creating an object
  */

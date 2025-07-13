@@ -3,8 +3,8 @@ mod config;
 
 use std::net::Ipv4Addr;
 
-use objects::object_service::ObjectService;
 use objects::object_filter::object_filter;
+use objects::object_service::ObjectService;
 use config::environment;
 
 #[tokio::main]

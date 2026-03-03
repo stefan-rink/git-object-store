@@ -8,9 +8,11 @@ readme = "README.md"
 repository = "https://github.com/stefan-rink/git-object-store"
 
 [dependencies]
+anyhow = "1.0.98"
 dotenv = "0.15.0"
 dotenvy = "0.15.7"
 envy = "0.4.2"
+git2 = "0.20.2"
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.140"
 tokio = { version = "1.46.1", features = ["full"] }
